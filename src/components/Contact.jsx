@@ -15,27 +15,27 @@ const Contact = () => {
     {
       icon: <Email />,
       title: 'Email',
-      content: 'luke.coleman@example.com',
-      link: 'mailto:luke.coleman@example.com',
+      content: 'alamin695sk@gmail.com',
+      link: 'mailto:alamin695sk@gmail.com',
     },
     {
       icon: <Phone />,
       title: 'Phone',
-      content: '+1 234 567 890',
-      link: 'tel:+1234567890',
+      content: '+91 6294090242',
+      link: 'tel:+916294090242',
     },
     {
       icon: <LocationOn />,
       title: 'Location',
-      content: 'San Francisco, CA',
+      content: 'Bangalore , India',
       link: 'https://maps.google.com',
     },
   ];
 
-  const socialLinks = [
-    { icon: <GitHub />, url: 'https://github.com' },
-    { icon: <LinkedIn />, url: 'https://linkedin.com' },
-    { icon: <Twitter />, url: 'https://twitter.com' },
+ const socialLinks = [
+    { icon: <GitHub />, url: "https://github.com/alaminskofficial" },
+    { icon: <LinkedIn />, url: "https://www.linkedin.com/in/alaminsk" },
+    { icon: <Twitter />, url: "https://x.com/SkAlamin94944" },
   ];
 
   const handleChange = (e) => {
@@ -47,7 +47,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
+    // Handle form submission here :todo
     console.log(formData);
   };
 
