@@ -16,8 +16,8 @@ const Home = () => {
   const stats = [
     { number: "4", text: "Years of experience" },
     { number: "19", text: "Projects completed" },
-    { number: "6", text: "Technologies mastered" },
-    { number: "466", text: "Code commits" },
+    { number: "11", text: "Technologies mastered" },
+    { number: "566", text: "Code commits" },
   ];
 
   const socialLinks = [

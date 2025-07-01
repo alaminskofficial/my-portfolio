@@ -8,22 +8,22 @@ const Resume = () => {
 
   const experiences = [
     {
-      period: "2022 - Present",
+      period: "2025 - Present",
       role: "Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      description: "Working on enterprise web applications.",
+      company: "Zinka Logistics pvt ltd.(Blackbuck)",
+      description: "Working on logistics management systems.",
     },
     {
-      period: "2020 - 2021",
-      role: "Freelance Web Developer",
-      company: "E-commerce Startup",
-      description: "Developed online shopping platforms.",
+      period: "2023 - 2025",
+      role: "Software Development Engineer",
+      company: "Novopay Solutions",
+      description: "Developed Fintech platforms for seamless transactions.",
     },
     {
-      period: "2019 - 2020",
-      role: "Teaching Assistant",
-      company: "Tech Academy",
-      description: "Assisted in web development courses.",
+      period: "2021 - 2023",
+      role: "Software Engineer",
+      company: "TrisysIt Services",
+      description: "Developed enterprise web applications.",
     },
   ];
 
@@ -32,8 +32,21 @@ const Resume = () => {
     { name: "JavaScript", category: "Frontend" },
     { name: "React.js", category: "Frontend" },
     { name: "Node.js", category: "Backend" },
-    { name: "Python", category: "Backend" },
-    { name: "MongoDB", category: "Backend" },
+    { name: "TypeScript", category: "Frontend" },
+    { name: "Next.js", category: "Full Stack" },
+    { name: "Java", category: "Backend" },
+    { name: "SpringBoot", category: "Backend" },
+    { name: "SQL/NoSQL", category: "Database" },
+    { name: "Redis", category: "Cache" },
+    { name: "Kafka/RabbitMQ", category: "Messaging Queue" },
+    { name: "AWS", category: "Cloud" },
+    { name: "Docker", category: "Containerization" },
+    { name: "Git", category: "Version Control" },
+    { name: "Agile/Scrum", category: "Methodology" },
+    { name: "CI/CD", category: "DevOps" },
+    { name: "RESTful APIs", category: "API" },
+    { name: "MERN" ,category :"Full Stack"},
+    {name :"Microservice", category:"Architecture"}
   ];
 
   return (
@@ -262,30 +275,51 @@ const Resume = () => {
             )}
 
             {activeTab === "education" && (
-              <Box>
+              <Box sx={{ flex: 1 }}>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Paper
-                    elevation={0}
-                    sx={{
-                      p: 3,
-                      bgcolor: "rgba(255, 255, 255, 0.05)",
-                      borderRadius: 2,
-                    }}
-                  >
-                    <Typography variant="h6" color="#00ff9d" gutterBottom>
-                      2018 - 2022
-                    </Typography>
-                    <Typography variant="h5" gutterBottom>
-                      Bachelor of Computer Science
-                    </Typography>
-                    <Typography color="text.secondary">
-                      University of Technology
-                    </Typography>
-                  </Paper>
+                  {[
+                    {
+                      period: "2017 - 2021",
+                      degree: "Bachelor of Engineering",
+                      institution: "Jadavpur University",
+                    },
+                    {
+                      period: "2023 - 2025",
+                      degree: "Master of Science in Computer Science",
+                      institution: "Woolf University (Scaler Neovarsity)",
+                    },
+                  ].map((education, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <Paper
+                        elevation={0}
+                        sx={{
+                          p: 3,
+                          mb: 2,
+                          bgcolor: "rgba(255, 255, 255, 0.05)",
+                          borderRadius: 2,
+                        }}
+                      >
+                        <Typography variant="h6" color="#00ff9d" gutterBottom>
+                          {education.period}
+                        </Typography>
+                        <Typography variant="h5" gutterBottom>
+                          {education.degree}
+                        </Typography>
+                        <Typography color="text.secondary">
+                          {education.institution}
+                        </Typography>
+                      </Paper>
+                    </motion.div>
+                  ))}
                 </motion.div>
               </Box>
             )}
@@ -305,17 +339,14 @@ const Resume = () => {
                       borderRadius: 2,
                     }}
                   >
+                     <Typography variant="body1" paragraph>
+                      As a dedicated software developer, I thrive on transforming complex problems into elegant solutions. My expertise spans across various web technologies, allowing me to craft seamless and intuitive user experiences.
+                    </Typography>
                     <Typography variant="body1" paragraph>
-                      I am a passionate developer with a strong foundation in
-                      web technologies and a keen eye for detail. My journey in
-                      software development has equipped me with both technical
-                      expertise and problem-solving skills.
+                      I am committed to writing clean, efficient code and continuously improving my skills. Outside of work, I am passionate about exploring new technologies and contributing to open-source projects, which keeps me at the forefront of industry trends.
                     </Typography>
                     <Typography variant="body1">
-                      I believe in writing clean, maintainable code and creating
-                      intuitive user experiences. When I'm not coding, I enjoy
-                      learning new technologies and contributing to open-source
-                      projects.
+                      My journey in software development is driven by a love for learning and a desire to make a meaningful impact through technology.
                     </Typography>
                   </Paper>
                 </motion.div>
