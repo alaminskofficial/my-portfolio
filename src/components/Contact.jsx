@@ -47,7 +47,9 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here :todo
+    // Handle form submission here :todo send email from your React app or use a service like EmailJS
+    // For now, we'll just log the form data to the console
+    alert('Message sent successfully!');
     console.log(formData);
   };
 
