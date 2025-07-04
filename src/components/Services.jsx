@@ -7,7 +7,7 @@ const Services = () => {
   const services = [
     {
       icon: <Code />,
-      title: 'Web Development',
+      title: 'Software Development',
       description: 'Creating responsive and dynamic web applications using modern frameworks and best practices.',
       details: ['Responsive Design', 'SEO Optimization', 'E-commerce Solutions']
     },

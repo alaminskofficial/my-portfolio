@@ -28,14 +28,15 @@ const Resume = () => {
   ];
 
   const skills = [
-    { name: "HTML/CSS", category: "Frontend" },
     { name: "JavaScript", category: "Frontend" },
+    { name: "Java", category: "Backend" },
+    { name: "TypeScript", category: "Frontend" },
     { name: "React.js", category: "Frontend" },
     { name: "Node.js", category: "Backend" },
-    { name: "TypeScript", category: "Frontend" },
-    { name: "Next.js", category: "Full Stack" },
-    { name: "Java", category: "Backend" },
     { name: "SpringBoot", category: "Backend" },
+    { name: "Next.js", category: "Full Stack" },
+    { name: "MERN" ,category :"Full Stack"},
+    { name: "HTML/CSS", category: "Frontend" },
     { name: "SQL/NoSQL", category: "Database" },
     { name: "Redis", category: "Cache" },
     { name: "Kafka/RabbitMQ", category: "Messaging Queue" },
@@ -45,7 +46,6 @@ const Resume = () => {
     { name: "Agile/Scrum", category: "Methodology" },
     { name: "CI/CD", category: "DevOps" },
     { name: "RESTful APIs", category: "API" },
-    { name: "MERN" ,category :"Full Stack"},
     {name :"Microservice", category:"Architecture"}
   ];
 
