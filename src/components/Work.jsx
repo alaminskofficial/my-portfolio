@@ -10,12 +10,22 @@ const Work = () => {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
+      title: 'skMovies',
       category: 'web',
-      image: 'https://picsum.photos/800/600?random=1',
-      description: 'A full-stack e-commerce solution with advanced features including real-time inventory tracking and AI-powered recommendations.',
+      image:'https://fullstack-lld-git-main-alaminskofficials-projects.vercel.app/static/media/footer-bg.67e95f05e76a8cebf7e2.jpg',
+      backupImage: 'https://picsum.photos/800/600?random=1',
+      description: 'A full-stack movie database application with personalized recommendations and advanced search features. ',
       technologies: ['React', 'Node.js', 'MongoDB', 'Redis', 'TensorFlow'],
-      github: 'https://github.com',
+      github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/sk-movies',
+      live: 'https://fullstack-lld-git-main-alaminskofficials-projects.vercel.app/sk-movies-app',
+    },
+    {
+      title: 'Portfolio Website',
+      category: 'design',
+      image: 'https://picsum.photos/800/600?random=3',
+      description: 'Modern portfolio website with dark theme, smooth animations, and responsive design.',
+      technologies: ['React', 'Material-UI', 'Framer Motion', 'Three.js'],
+      github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react',
       live: 'https://example.com',
     },
     {
@@ -28,22 +38,23 @@ const Work = () => {
       live: 'https://example.com',
     },
     {
-      title: 'Portfolio Website',
-      category: 'design',
-      image: 'https://picsum.photos/800/600?random=3',
-      description: 'Modern portfolio website with dark theme, smooth animations, and responsive design.',
-      technologies: ['React', 'Material-UI', 'Framer Motion', 'Three.js'],
-      github: 'https://github.com',
-      live: 'https://example.com',
-    },
-    {
       title: 'Task Management System',
       category: 'web',
       image: 'https://picsum.photos/800/600?random=4',
       description: 'Project management tool with real-time updates, Kanban boards, and team collaboration features.',
-      technologies: ['Vue.js', 'Express', 'Socket.io', 'PostgreSQL'],
-      github: 'https://github.com',
+      technologies: ['React.js', 'Express', 'Socket.io', 'PostgreSQL'],
+      github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/todo-app',
       live: 'https://example.com',
+    },
+    {
+      title : "Weather Application",
+      category: 'web',
+      image : 'https://picsum.photos/800/600?random=7',
+      description : "Weather application to fetch the weather data in current location and search based city ",
+      technologies: ['React.js', 'Express', 'Socket.io', 'PostgreSQL'],
+      github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/weatherapp',
+      live: 'https://sk-weather-app-three.vercel.app/',
+
     },
     {
       title: 'AI Image Generator',
@@ -172,6 +183,9 @@ const Work = () => {
                         height="200"
                         image={project.image}
                         alt={project.title}
+                        onError={(e) => {
+                          e.target.src = project.backupImage || 'https://picsum.photos/800/600?random=1';
+                        }}
                         sx={{
                           objectFit: 'cover',
                         }}
