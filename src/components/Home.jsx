@@ -10,7 +10,7 @@ import {
 import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import passportImage from "../assets/passportmy.jpg";
+import passportImage from "../assets/mypicture.jpg";
 
 const Home = () => {
   const stats = [
@@ -148,47 +148,46 @@ const Home = () => {
           </Grid>
 
           <Grid item xs={12} md={5}>
-            
+            <Box
+              sx={{
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+                height: { xs: 250, sm: 300, md: 350 },
+                mx: "auto",
+              }}
+            >
+              {/* Animated dashed circle */}
               <Box
                 sx={{
-                  position: "relative",
-                  width: "100%",
-                  height: "100%",
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    width: "80%",
-                    height: "80%",
-                    border: "2px dashed",
-                    borderColor: "primary.main",
-                    borderRadius: "50%",
-                    animation: "rotate 20s linear infinite",
-                  },
+                  position: "absolute",
+                  width: { xs: 220, sm: 260, md: 300 },
+                  height: { xs: 220, sm: 260, md: 300 },
+                  borderRadius: "50%",
+                  border: "2px dashed #00ffc3",
+                  animation: "spin 10s linear infinite",
+                  boxShadow: "0 0 15px rgba(0, 255, 200, 0.4)",
                 }}
-              >
-                <Box
-                  component="img"
-                  src={passportImage}
-                  alt="Profile"
-                  sx={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    width: "70%",
-                    height: "70%",
-                    objectFit: "cover",
-                    borderRadius: "50%",
-                    border: "4px solid",
-                    borderColor: "background.paper",
-                    zIndex: 10,
-                  }}
-                />
-              </Box>
-            
+              />
+
+              {/* Profile Image */}
+              <Box
+                component="img"
+                src={passportImage}
+                alt="Profile"
+                sx={{
+                  width: { xs: 180, sm: 220, md: 260 },
+                  height: { xs: 180, sm: 220, md: 260 },
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  zIndex: 1,
+                  border: "3px solid #fff",
+                  boxShadow: "0 4px 30px rgba(0,0,0,0.2)",
+                }}
+              />
+            </Box>
           </Grid>
         </Grid>
       </Container>

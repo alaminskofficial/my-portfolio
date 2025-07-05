@@ -16,13 +16,13 @@ const Resume = () => {
     {
       period: "2023 - 2025",
       role: "Software Development Engineer",
-      company: "Novopay Solutions",
+      company: "Novopay Solutions pvt ltd.",
       description: "Developed Fintech platforms for seamless transactions.",
     },
     {
       period: "2021 - 2023",
       role: "Software Engineer",
-      company: "TrisysIt Services",
+      company: "TrisysIt Services pvt ltd.",
       description: "Developed enterprise web applications.",
     },
   ];
