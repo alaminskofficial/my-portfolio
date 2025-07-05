@@ -168,7 +168,7 @@ const Home = () => {
                   borderRadius: "50%",
                   border: "2px dashed #00ffc3",
                   animation: "spin 10s linear infinite",
-                  boxShadow: "0 0 15px rgba(0, 255, 200, 0.4)",
+                  boxShadow: "0 0 21px rgba(0, 255, 200, 0.4)",
                 }}
               />
 
