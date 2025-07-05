@@ -26,7 +26,7 @@ const Work = () => {
       description: 'Modern portfolio website with dark theme, smooth animations, and responsive design.',
       technologies: ['React', 'Material-UI', 'Framer Motion', 'Three.js'],
       github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react',
-      live: 'https://example.com',
+      live: 'https://my-portfolio-flax-nu-70.vercel.app/',
     },
     {
       title: 'Fitness Tracking App',
