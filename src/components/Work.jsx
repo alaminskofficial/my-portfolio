@@ -10,6 +10,24 @@ const Work = () => {
 
   const projects = [
     {
+      title:'minuteServ',
+      category: 'web',
+      image: 'https://picsum.photos/800/600?random=6',
+      description: 'A service marketplace platform connecting users with local service providers for various tasks and services.',
+      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay'],
+      github:'https://github.com/alaminskofficial',
+      live:'https://minuteserv.com',
+    },
+    {
+      title: 'minuteServ android app',
+      category: 'mobile',
+      image: 'https://picsum.photos/800/600?random=8',
+      description: 'A mobile application for the minuteServ service marketplace, allowing users to book services and manage their accounts on the go.',
+      technologies: ['React Native', 'Node.js', 'Express', 'MongoDB', 'Razorpay'],
+      github:'https://github.com/alaminskofficial',
+      live:'https://play.google.com/store/apps/details?id=com.minuteserv.app',
+    },
+    {
       title: 'skMovies',
       category: 'web',
       image:'https://fullstack-lld-git-main-alaminskofficials-projects.vercel.app/static/media/footer-bg.67e95f05e76a8cebf7e2.jpg',
@@ -17,7 +35,7 @@ const Work = () => {
       description: 'A full-stack movie database application with personalized recommendations and advanced search features. ',
       technologies: ['React', 'Node.js', 'MongoDB', 'Redis', 'TensorFlow'],
       github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/sk-movies',
-      live: 'https://fullstack-lld-git-main-alaminskofficials-projects.vercel.app/sk-movies-app',
+      live: 'https://skmovies.vercel.app',
     },
     {
       title: 'Portfolio Website',
@@ -26,7 +44,35 @@ const Work = () => {
       description: 'Modern portfolio website with dark theme, smooth animations, and responsive design.',
       technologies: ['React', 'Material-UI', 'Framer Motion', 'Three.js'],
       github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react',
-      live: 'https://my-portfolio-rho-lemon-47.vercel.app/',
+      live: 'https://alamin-sk-official.vercel.app',
+    },
+    {
+      title : "Weather Application",
+      category: 'web',
+      image : 'https://picsum.photos/800/600?random=7',
+      description : "Weather application to fetch the weather data in current location and search based city ",
+      technologies: ['React.js', 'Express', 'Socket.io', 'PostgreSQL'],
+      github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/weatherapp',
+      live: 'https://sk-weather.vercel.app/',
+
+    },
+    {
+      title: 'AI Code Review Platform',
+      category: 'web',
+      image: 'https://picsum.photos/800/600?random=5',
+      description: 'Web platform that uses AI to analyze and provide feedback on code quality, style, and potential bugs.',
+      technologies: ['AI', 'Next.js', 'Python', 'PyTorch', 'AWS'],
+      github: 'https://github.com/alaminskofficial/',
+      live: 'https://example.com',
+    },
+    {
+      title: 'AI Image Generator',
+      category: 'web',
+      image: 'https://picsum.photos/800/600?random=5',
+      description: 'Web application that generates unique artwork using state-of-the-art AI models.',
+      technologies: ['Next.js', 'Python', 'PyTorch', 'AWS'],
+      github: 'https://github.com',
+      live: 'https://example.com',
     },
     {
       title: 'Fitness Tracking App',
@@ -46,34 +92,6 @@ const Work = () => {
       github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/todo-app',
       live: 'https://example.com',
     },
-    {
-      title : "Weather Application",
-      category: 'web',
-      image : 'https://picsum.photos/800/600?random=7',
-      description : "Weather application to fetch the weather data in current location and search based city ",
-      technologies: ['React.js', 'Express', 'Socket.io', 'PostgreSQL'],
-      github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/weatherapp',
-      live: 'https://sk-weather-app-three.vercel.app/',
-
-    },
-    {
-      title: 'AI Image Generator',
-      category: 'web',
-      image: 'https://picsum.photos/800/600?random=5',
-      description: 'Web application that generates unique artwork using state-of-the-art AI models.',
-      technologies: ['Next.js', 'Python', 'PyTorch', 'AWS'],
-      github: 'https://github.com',
-      live: 'https://example.com',
-    },
-    {
-      title: 'Smart Home Dashboard',
-      category: 'design',
-      image: 'https://picsum.photos/800/600?random=6',
-      description: 'IoT dashboard for monitoring and controlling smart home devices with beautiful visualizations.',
-      technologies: ['React', 'D3.js', 'Node.js', 'MQTT'],
-      github: 'https://github.com',
-      live: 'https://example.com',
-    },
   ];
 
   const filteredProjects = filter === 'all'
@@ -88,7 +106,12 @@ const Work = () => {
         backgroundColor: 'background.default',
       }}
     >
-      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+      <Container maxWidth="lg"
+       display="flex"
+       justifyContent="center"
+       alignItems="center"
+       mx="auto"
+       sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -150,7 +173,10 @@ const Work = () => {
           </Box>
         </motion.div>
 
-        <Grid container spacing={{ xs: 3, sm: 4 }} sx={{ px: { xs: 1, sm: 0 } }}>
+        <Grid container 
+         justifyContent={"center"}
+         alignItems={"center"}
+         spacing={{ xs: 3, sm: 4 }} sx={{ px: { xs: 1, sm: 0 } }}>
           <AnimatePresence>
             {filteredProjects.map((project, index) => (
               <Grid item xs={12} sm={6} md={4} key={project.title}>

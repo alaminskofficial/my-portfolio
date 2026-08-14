@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Resume from './components/Resume';
 import Work from './components/Work';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const theme = createTheme({
   palette: {
@@ -124,6 +125,7 @@ function App() {
           <Route path="/work" element={<Work />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </Router>
     </ThemeProvider>
   );

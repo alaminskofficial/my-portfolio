@@ -9,31 +9,34 @@ const Resume = () => {
   const experiences = [
     {
       period: "2025 - Present",
-      role: "Full Stack Developer",
-      company: "Zinka Logistics pvt ltd.(Blackbuck)",
-      description: "Working on logistics management systems.",
+      role: "Specialist Software Engineer",
+      company: "Societe Generale Global Solution Centre",
+      description: "Developing and maintaining enterprise-level applications for financial services, focusing on performance optimization and scalability.",
     },
     {
       period: "2023 - 2025",
       role: "Software Development Engineer",
       company: "Novopay Solutions pvt ltd.",
-      description: "Developed Fintech platforms for seamless transactions.",
+      description: "Worked on developing and maintaining web applications, implementing new features, and optimizing existing code for better performance.",
     },
     {
       period: "2021 - 2023",
       role: "Software Engineer",
       company: "TrisysIt Services pvt ltd.",
-      description: "Developed enterprise web applications.",
+      description: "Contributed to the development of web applications, collaborated with cross-functional teams, and participated in code reviews to ensure high-quality software delivery.",
     },
   ];
 
   const skills = [
-    { name: "JavaScript", category: "Frontend" },
+    { name: "AI-ML", category: "Machine Learning" },
+    { name:"Gen AI", category:"Artificial Intelligence"},
+    { name: "Python", category: "Backend" },
     { name: "Java", category: "Backend" },
+    { name: "JavaScript", category: "Frontend" },
     { name: "TypeScript", category: "Frontend" },
+    { name: "SpringBoot", category: "Backend" },
     { name: "React.js", category: "Frontend" },
     { name: "Node.js", category: "Backend" },
-    { name: "SpringBoot", category: "Backend" },
     { name: "Next.js", category: "Full Stack" },
     { name: "MERN" ,category :"Full Stack"},
     { name: "HTML/CSS", category: "Frontend" },
@@ -288,7 +291,7 @@ const Resume = () => {
                       institution: "Jadavpur University",
                     },
                     {
-                      period: "2023 - 2025",
+                      period: "2024 - 2026",
                       degree: "Master of Science in Computer Science",
                       institution: "Woolf University (Scaler Neovarsity)",
                     },
@@ -340,13 +343,19 @@ const Resume = () => {
                     }}
                   >
                      <Typography variant="body1" paragraph>
-                      As a dedicated software developer, I thrive on transforming complex problems into elegant solutions. My expertise spans across various web technologies, allowing me to craft seamless and intuitive user experiences.
+                      As a dedicated software Engineer, I thrive on transforming complex problems into elegant solutions. My expertise spans across various technologies, allowing me to craft seamless and intuitive user experiences.
+                    </Typography>
+                    <Typography variant="body1" paragraph>
+                      I am also deeply passionate about the field of Artificial Intelligence and Machine Learning. I have been actively exploring AI technologies, including <b>Generative AI</b>, and have implemented several projects that leverage these cutting-edge tools to solve real-world problems.
                     </Typography>
                     <Typography variant="body1" paragraph>
                       I am committed to writing clean, efficient code and continuously improving my skills. Outside of work, I am passionate about exploring new technologies and contributing to open-source projects, which keeps me at the forefront of industry trends.
                     </Typography>
                     <Typography variant="body1">
                       My journey in software development is driven by a love for learning and a desire to make a meaningful impact through technology.
+                    </Typography>
+                    <Typography variant="body1" paragraph>
+                      I am always open to new opportunities and collaborations that challenge me to grow and innovate. Let's connect and create something amazing together!
                     </Typography>
                   </Paper>
                 </motion.div>
