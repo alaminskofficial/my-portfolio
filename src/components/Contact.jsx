@@ -20,7 +20,6 @@ import {
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
