@@ -44,7 +44,7 @@ const Work = () => {
       description: 'Modern portfolio website with dark theme, smooth animations, and responsive design.',
       technologies: ['React', 'Material-UI', 'Framer Motion', 'Three.js'],
       github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react',
-      live: 'https://alamin-sk-official.vercel.app',
+      live: 'https://alaminskofficial.vercel.app',
     },
     {
       title : "Weather Application",
