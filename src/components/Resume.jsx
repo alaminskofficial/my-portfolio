@@ -91,7 +91,7 @@ const Resume = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               style={{ color: "#00ff9d" }}
             >
-              My experience
+              {activeTab} 
             </motion.span>
           </Typography>
         </motion.div>

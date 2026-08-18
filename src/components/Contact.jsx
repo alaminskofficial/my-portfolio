@@ -64,10 +64,25 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Message sent successfully! Please mail your concern for instant response');
-    console.log(formData);
-    //mail to alaminsk@gmail.com :todo
-    //sendEmail(formData);
+   // Construct the mailto link with improved body content
+    const mailtoLink = `mailto:alamin695sk@gmail.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(`Hello Alamin,
+        
+            You have received a new message from your portfolio contact form.
+            
+            Name: ${formData.name}
+            Email: ${formData.email}
+            
+            Message:
+            ${formData.message}
+            
+            Best regards,
+            ${formData.name}`
+        )}`;
+    
+      // Open the mailto link
+    window.open(mailtoLink, '_blank');
     setFormData({
       name: '',
       email: '',
