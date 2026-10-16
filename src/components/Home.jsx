@@ -10,7 +10,7 @@ import {
 import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import passportImage from "../assets/mypicture.jpg";
+import passportImage from "../assets/mynewpic.png";
 
 const Home = () => {
   const stats = [

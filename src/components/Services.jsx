@@ -32,6 +32,7 @@ const Services = () => {
       description:
         'Creating responsive and dynamic web applications using modern frameworks and best practices.',
       details: [
+        'Website Development',
         'Responsive Design',
         'SEO Optimization',
         'E-commerce Solutions',
@@ -44,9 +45,9 @@ const Services = () => {
       description:
         'Implementing AI and ML solutions to enhance user experiences and automate processes.',
       details: [
+        'Generative AI Models',
         'Natural Language Processing',
         'Computer Vision',
-        'Generative AI Models',
         'Predictive Analytics',
         'Recommendation Systems',
       ],
