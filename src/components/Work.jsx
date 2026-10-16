@@ -25,7 +25,7 @@ const Work = () => {
       description: 'A mobile application for the minuteServ service marketplace, allowing users to book services and manage their accounts on the go.',
       technologies: ['React Native', 'Node.js', 'Express', 'MongoDB', 'Razorpay'],
       github:'https://github.com/alaminskofficial',
-      live:'https://play.google.com/store/apps/details?id=com.minuteserv.app',
+      live:'https://play.google.com/store/apps/details?id=com.minuteserv',
     },
     {
       title: 'skMovies',
