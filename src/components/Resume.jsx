@@ -39,14 +39,14 @@ const Resume = () => {
       skills: ["Node.js", "Java", "SpringBoot", "Python", "RESTful APIs", "MERN"],
     },
     {
-      name: "Data & Infrastructure",
-      description: "Storage, messaging, and delivery foundations",
-      skills: ["SQL/NoSQL", "Redis", "Kafka/RabbitMQ", "AWS", "Docker", "CI/CD", "Git"],
-    },
-    {
       name: "AI & Engineering",
       description: "Applied intelligence and dependable delivery",
       skills: ["AI-ML", "Gen AI", "Microservice", "Agile/Scrum" , " Software Design"],
+    },
+    {
+      name: "Data & Infrastructure",
+      description: "Storage, messaging, and delivery foundations",
+      skills: ["SQL/NoSQL", "Redis", "Kafka/RabbitMQ", "AWS", "Docker", "CI/CD", "Git"],
     },
   ];
 
