@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
   Paper,
   Dialog,
   DialogTitle,
@@ -181,24 +180,21 @@ const Services = () => {
         </motion.div>
 
         {/* ================= SERVICES GRID ================= */}
-        <Grid
-          container
-          spacing={{
-            xs: 2.5,
-            sm: 3,
-            md: 4,
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: {
+              xs: 'minmax(0, 1fr)',
+              sm: 'repeat(2, minmax(0, 1fr))',
+            },
+            gap: { xs: 2, sm: 2.5, md: 3 },
+            alignItems: 'stretch',
           }}
-          justifyContent="center"
-          alignItems="center"
-
         >
           {services.map((service, index) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={6}
+            <Box
               key={service.title}
+              sx={{ minWidth: 0, display: 'flex' }}
             >
               <motion.div
                 initial={{
@@ -427,9 +423,9 @@ const Services = () => {
                   </Box>
                 </Paper>
               </motion.div>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
 
         {/* ================= DIALOG ================= */}
         <AnimatePresence>

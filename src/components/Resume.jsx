@@ -41,7 +41,7 @@ const Resume = () => {
     {
       name: "AI & Engineering",
       description: "Applied intelligence and dependable delivery",
-      skills: ["AI-ML", "Gen AI", "Microservice", "Agile/Scrum" , " Software Design"],
+      skills: ["AI-ML", "Gen AI", "Microservice", "Agile/Scrum", " Software Design"],
     },
     {
       name: "Data & Infrastructure",
@@ -81,7 +81,7 @@ const Resume = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-                      My background
+              My background
             </motion.span>
             <motion.span
               initial={{ opacity: 0, x: 20 }}
@@ -89,7 +89,7 @@ const Resume = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               style={{ color: "#00ff9d" }}
             >
-              {activeTab} 
+              {activeTab}
             </motion.span>
           </Typography>
         </motion.div>
@@ -369,7 +369,7 @@ const Resume = () => {
                       borderRadius: 2,
                     }}
                   >
-                     <Typography variant="body1" paragraph>
+                    <Typography variant="body1" paragraph>
                       I’m a software engineer who enjoys making complex product requirements understandable and useful. I work across interfaces, services, and data to deliver complete experiences rather than isolated features.
                     </Typography>
                     <Typography variant="body1" paragraph>

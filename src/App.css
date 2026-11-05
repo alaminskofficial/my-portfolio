@@ -1,6 +1,27 @@
 #root {
   width: 100%;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .MuiContainer-root {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+  }
+
+  .MuiDialog-paper {
+    width: calc(100% - 24px);
+    max-width: 560px;
+    margin: 12px;
+  }
+
+  .MuiButton-root {
+    min-height: 44px;
+  }
 }
 

@@ -56,10 +56,10 @@ const Work = () => {
       live: 'https://alaminskofficial.vercel.app',
     },
     {
-      title : "Weather Application",
+      title: "Weather Application",
       category: 'web',
-      image : 'https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=1200&q=85',
-      description : "A weather dashboard that brings current local conditions together with city search in a simple, glanceable view.",
+      image: 'https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=1200&q=85',
+      description: "A weather dashboard that brings current local conditions together with city search in a simple, glanceable view.",
       technologies: ['React.js', 'Express', 'Socket.io', 'PostgreSQL'],
       github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/weatherapp',
       live: 'https://sk-weather.vercel.app/',
@@ -115,12 +115,7 @@ const Work = () => {
         backgroundColor: 'background.default',
       }}
     >
-      <Container maxWidth="lg"
-       display="flex"
-       justifyContent="center"
-       alignItems="center"
-       mx="auto"
-       sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -182,120 +177,147 @@ const Work = () => {
           </Box>
         </motion.div>
 
-        <Grid container 
-         justifyContent={"center"}
-         alignItems={"center"}
-         spacing={{ xs: 3, sm: 4 }} sx={{ px: { xs: 1, sm: 0 } }}>
+        <Grid
+          container
+          justifyContent="flex-start"
+          alignItems="stretch"
+          spacing={{ xs: 2, sm: 3 }}
+          sx={{ px: { xs: 0, sm: 0 } }}
+        >
           <AnimatePresence>
             {filteredProjects.map((project, index) => (
-              <Grid item xs={12} sm={6} md={4} key={project.title}>
+              <Grid item xs={12} sm={6} md={4} key={project.title} sx={{ display: 'flex' }}>
                 <motion.div
                   layout
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
+                  style={{ width: '100%', height: '100%', display: 'flex' }}
                 >
                   <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    whileHover={{ y: -3 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+                    style={{ width: '100%', height: '100%', display: 'flex' }}
                   >
                     <Card
                       sx={{
                         height: '100%',
+                        width: '100%',
+                        minWidth: 0,
                         display: 'flex',
                         flexDirection: 'column',
                         backgroundColor: 'background.paper',
                         overflow: 'hidden',
+                        border: '1px solid rgba(204, 214, 246, 0.1)',
                       }}
                     >
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ type: 'tween', duration: 0.5 }}
-                    >
-                        <CardMedia
-                        component="img"
-                          height="220"
-                        image={project.image}
-                        alt={project.title}
-                        onError={(e) => {
-                          e.currentTarget.onerror = null;
-                          e.currentTarget.src = workingPhoto;
-                        }}
-                        sx={{
-                          display: 'block',
-                          objectFit: 'cover',
-                          width: '100%',
-                            aspectRatio: '16 / 9',
-                        }}
-                      />
-                    </motion.div>
-                    <CardContent sx={{ flexGrow: 1 }}>
                       <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
+                        whileHover={{ scale: 1.035 }}
+                        transition={{ type: 'tween', duration: 0.35 }}
+                        style={{ width: '100%', overflow: 'hidden' }}
                       >
-                        <Typography
-                          variant="h6"
-                          sx={{ mb: 1, fontWeight: 600 }}
-                        >
-                          {project.title}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{ mb: 2, color: 'text.secondary' }}
-                        >
-                          {project.description}
-                        </Typography>
+                        <CardMedia
+                          component="img"
+                          height="180"
+                          image={project.image}
+                          alt={project.title}
+                          onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = workingPhoto;
+                          }}
+                          sx={{
+                            display: 'block',
+                            objectFit: 'cover',
+                            width: '100%',
+                            aspectRatio: '16 / 9',
+                          }}
+                        />
                       </motion.div>
-                      <Box sx={{ mb: 2 }}>
-                        {project.technologies.map((tech) => (
-                          <motion.div
-                            key={tech}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.1 + 0.2 }}
-                            style={{ display: 'inline-block' }}
+                      <CardContent sx={{ flexGrow: 1 }}>
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: Math.min(index, 4) * 0.06 }}
+                        >
+                          <Typography
+                            variant="h6"
+                            sx={{ mb: 1, fontWeight: 600, minHeight: { xs: 'auto', sm: 52 } }}
                           >
+                            {project.title}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              mb: 2,
+                              color: 'text.secondary',
+                              minHeight: { xs: 'auto', sm: 84 },
+                              display: '-webkit-box',
+                              WebkitBoxOrient: 'vertical',
+                              WebkitLineClamp: 4,
+                              overflow: 'hidden',
+                            }}
+                          >
+                            {project.description}
+                          </Typography>
+                        </motion.div>
+                        <Box sx={{ mb: 1.5, minHeight: { xs: 0, sm: 58 } }}>
+                          {project.technologies.slice(0, 4).map((tech) => (
+                            <motion.div
+                              key={tech}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: index * 0.1 + 0.2 }}
+                              style={{ display: 'inline-block' }}
+                            >
+                              <Chip
+                                label={tech}
+                                size="small"
+                                sx={{ mr: 1, mb: 1 }}
+                              />
+                            </motion.div>
+                          ))}
+                          {project.technologies.length > 4 && (
                             <Chip
-                              label={tech}
+                              label={`+${project.technologies.length - 4}`}
                               size="small"
+                              aria-label={`${project.technologies.length - 4} more technologies`}
                               sx={{ mr: 1, mb: 1 }}
                             />
-                          </motion.div>
-                        ))}
-                      </Box>
-                      <Box sx={{ display: 'flex', gap: 1 }}>
-                        <IconButton
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          size="small"
-                          sx={{
-                            color: 'text.primary',
-                            '&:hover': { color: 'primary.main' },
-                          }}
-                        >
-                          <GitHub />
-                        </IconButton>
-                        <IconButton
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          size="small"
-                          sx={{
-                            color: 'text.primary',
-                            '&:hover': { color: 'primary.main' },
-                          }}
-                        >
-                          <Launch />
-                        </IconButton>
-                      </Box>
-                    </CardContent>
-                  </Card>
+                          )}
+                        </Box>
+                        <Box sx={{ display: 'flex', gap: 1, mt: 'auto', pt: 1, borderTop: '1px solid rgba(204, 214, 246, 0.08)' }}>
+                          <IconButton
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            size="small"
+                            aria-label={`View ${project.title} source code`}
+                            sx={{
+                              color: 'text.primary',
+                              '&:hover': { color: 'primary.main' },
+                            }}
+                          >
+                            <GitHub />
+                          </IconButton>
+                          <IconButton
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            size="small"
+                            aria-label={`Open ${project.title} project`}
+                            sx={{
+                              color: 'text.primary',
+                              '&:hover': { color: 'primary.main' },
+                            }}
+                          >
+                            <Launch />
+                          </IconButton>
+                        </Box>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
               </Grid>
             ))}
           </AnimatePresence>

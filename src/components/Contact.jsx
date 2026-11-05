@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
   TextField,
   Button,
   IconButton,
@@ -64,7 +63,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   // Construct the mailto link with improved body content
+    // Construct the mailto link with improved body content
     const mailtoLink = `mailto:alamin695sk@gmail.com?subject=${encodeURIComponent(
       formData.subject
     )}&body=${encodeURIComponent(`Hello Alamin,
@@ -79,9 +78,9 @@ const Contact = () => {
             
             Best regards,
             ${formData.name}`
-        )}`;
-    
-      // Open the mailto link
+    )}`;
+
+    // Open the mailto link
     window.open(mailtoLink, '_blank');
     setFormData({
       name: '',
@@ -91,6 +90,25 @@ const Contact = () => {
     });
   };
 
+  const fieldSx = {
+    '& .MuiOutlinedInput-root': {
+      minHeight: 54,
+      borderRadius: 1.5,
+      backgroundColor: 'rgba(255,255,255,0.025)',
+      transition: 'background-color 0.2s ease, box-shadow 0.2s ease',
+      '& fieldset': { borderColor: 'rgba(204,214,246,0.16)' },
+      '&:hover fieldset': { borderColor: 'rgba(100,255,218,0.48)' },
+      '&.Mui-focused': {
+        backgroundColor: 'rgba(100,255,218,0.035)',
+        boxShadow: '0 0 0 3px rgba(100,255,218,0.08)',
+      },
+      '&.Mui-focused fieldset': { borderWidth: '1px', borderColor: '#64ffda' },
+    },
+    '& .MuiInputLabel-root': { fontSize: 13 },
+    '& .MuiInputBase-input': { fontSize: 13 },
+    '& .MuiInputBase-inputMultiline': { lineHeight: 1.7 },
+  };
+
 
   return (
     <Box
@@ -98,8 +116,8 @@ const Contact = () => {
       sx={{
         minHeight: '100%',
         py: {
-          xs: 6,
-          sm: 8,
+          xs: 8,
+          sm: 9,
           md: 11,
         },
         px: {
@@ -128,37 +146,37 @@ const Contact = () => {
         >
           <Typography
             variant="h2"
-            align="center"
+            align="left"
             sx={{
-              mb: 1.5,
+              mb: 1,
               fontSize: {
-                xs: '1.9rem',
-                sm: '2.2rem',
-                md: '2.5rem',
+                xs: 'clamp(2rem, 8vw, 2.5rem)',
+                sm: '2.7rem',
+                md: '3.2rem',
               },
-              lineHeight: 1.15,
+              lineHeight: 1.12,
               fontWeight: 700,
             }}
           >
-            Contact Me
+            Let’s talk about<br />
+            <Box component="span" sx={{ color: 'primary.main' }}>what you’re building.</Box>
           </Typography>
 
           <Typography
             variant="body1"
-            align="center"
+            align="left"
             sx={{
               mb: {
-                xs: 5,
-                sm: 6,
-                md: 8,
+                xs: 4,
+                sm: 5,
+                md: 6,
               },
               px: {
                 xs: 1,
                 sm: 0,
               },
               color: 'text.secondary',
-              maxWidth: 600,
-              mx: 'auto',
+              maxWidth: 680,
               lineHeight: 1.7,
             }}
           >
@@ -167,25 +185,21 @@ const Contact = () => {
         </motion.div>
 
         {/* Main content */}
-        <Grid
-          container
-          spacing={{
-            xs: 4,
-            sm: 5,
-            md: 6,
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'minmax(0, 0.82fr) minmax(0, 1.18fr)' },
+            alignItems: 'start',
+            columnGap: { xs: 0, md: 4, lg: 5 },
+            rowGap: { xs: 3, md: 0 },
+            width: '100%',
           }}
-          alignItems="stretch"
-          justifyContent="center"
         >
           {/* Contact information */}
-          <Grid
-            item
-            xs={12}
-            md={5}
-            lg={5}
+          <Box
             sx={{
-              display: 'flex',
-              justifyContent: 'center',
+              minWidth: 0,
+              order: { xs: 2, md: 1 },
             }}
           >
             <motion.div
@@ -194,156 +208,79 @@ const Contact = () => {
               transition={{ duration: 0.5 }}
               style={{ width: '100%' }}
             >
-              <Box
-                sx={{
-                  width: '100%',
-                  maxWidth: {
-                    xs: 560,
-                    md: 620,
-                    lg: 650,
-                  },
-                  mx: 'auto',
-                }}
-              >
+              <Box sx={{ width: '100%', maxWidth: { xs: 560, md: 'none' }, mx: 'auto' }}>
                 <Typography
-                  variant="h5"
+                  variant="overline"
                   sx={{
-                    mb: {
-                      xs: 2.5,
-                      sm: 3,
-                      md: 4,
-                    },
-                    fontSize: {
-                      xs: '1.35rem',
-                      sm: '1.5rem',
-                    },
-                    fontWeight: 600,
-                    textAlign: {
-                      xs: 'center',
-                      md: 'left',
-                    },
+                    display: 'block',
+                    mb: 1.5,
+                    color: 'primary.main',
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
                   }}
                 >
-                  Get in Touch
+                  CONTACT DETAILS
                 </Typography>
 
-                {contactInfo.map((info, index) => (
-                  <Paper
-                    key={index}
-                    component="a"
-                    href={info.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    elevation={0}
-                    sx={{
-                      p: {
-                        xs: 2,
-                        sm: 2.5,
-                        md: 3,
-                      },
-                      mb: {
-                        xs: 1.5,
-                        sm: 2,
-                        md: 3,
-                      },
-                      width: '100%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: {
-                        xs: 1.5,
-                        sm: 2,
-                      },
-                      border: '1px solid',
-                      borderColor: 'divider',
-                      borderRadius: 3,
-                      backgroundColor: 'background.paper',
-                      textDecoration: 'none',
-                      color: 'inherit',
-                      transition:
-                        'transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease',
-                      '&:hover': {
-                        transform: {
-                          xs: 'none',
-                          md: 'translateX(6px)',
-                        },
-                        borderColor: 'primary.main',
-                        boxShadow: 3,
-                        '& .MuiSvgIcon-root': {
-                          color: 'primary.main',
-                        },
-                      },
-                    }}
-                  >
+                <Paper
+                  elevation={0}
+                  sx={{
+                    px: { xs: 1.5, sm: 2 },
+                    border: '1px solid',
+                    borderColor: 'divider',
+                    borderRadius: 2.5,
+                    backgroundColor: 'background.paper',
+                  }}
+                >
+                  {contactInfo.map((info, index) => (
                     <Box
+                      component="a"
+                      key={info.title}
+                      href={info.link}
+                      target={info.title === 'Location' ? '_blank' : undefined}
+                      rel={info.title === 'Location' ? 'noopener noreferrer' : undefined}
                       sx={{
-                        flexShrink: 0,
-                        width: {
-                          xs: 42,
-                          sm: 46,
-                        },
-                        height: {
-                          xs: 42,
-                          sm: 46,
-                        },
-                        borderRadius: '50%',
+                        minHeight: 70,
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'center',
-                        backgroundColor: 'action.hover',
-                        color: 'text.primary',
-                        '& .MuiSvgIcon-root': {
-                          fontSize: {
-                            xs: 20,
-                            sm: 22,
-                          },
-                          transition: 'color 0.25s ease',
-                        },
+                        gap: 1.5,
+                        py: 1.25,
+                        textDecoration: 'none',
+                        color: 'inherit',
+                        borderBottom: index < contactInfo.length - 1 ? '1px solid' : 'none',
+                        borderColor: 'divider',
+                        '&:hover .contact-icon': { color: 'primary.main', backgroundColor: 'rgba(100,255,218,0.12)' },
                       }}
                     >
-                      {info.icon}
-                    </Box>
-
-                    <Box
-                      sx={{
-                        minWidth: 0,
-                        flex: 1,
-                      }}
-                    >
-                      <Typography
-                        variant="subtitle2"
+                      <Box
+                        className="contact-icon"
                         sx={{
-                          mb: 0.3,
-                          fontWeight: 600,
-                        }}
-                      >
-                        {info.title}
-                      </Typography>
-
-                      <Typography
-                        variant="body2"
-                        sx={{
+                          width: 38,
+                          height: 38,
+                          flex: '0 0 38px',
+                          display: 'grid',
+                          placeItems: 'center',
+                          borderRadius: 1.5,
                           color: 'text.secondary',
-                          overflowWrap: 'anywhere',
-                          lineHeight: 1.5,
+                          backgroundColor: 'rgba(255,255,255,0.045)',
+                          transition: 'all 0.2s ease',
                         }}
                       >
-                        {info.content}
-                      </Typography>
+                        {info.icon}
+                      </Box>
+                      <Box sx={{ minWidth: 0, flex: 1 }}>
+                        <Typography sx={{ color: 'text.secondary', fontSize: 10, mb: 0.25 }}>
+                          {info.title}
+                        </Typography>
+                        <Typography sx={{ color: 'text.primary', fontSize: { xs: 11, sm: 12 }, overflowWrap: 'anywhere' }}>
+                          {info.content}
+                        </Typography>
+                      </Box>
+                      <ArrowOutward sx={{ flexShrink: 0, color: 'text.secondary', fontSize: 16 }} />
                     </Box>
-
-                    <ArrowOutward
-                      sx={{
-                        flexShrink: 0,
-                        fontSize: 18,
-                        color: 'text.secondary',
-                        display: {
-                          xs: 'none',
-                          sm: 'block',
-                        },
-                      }}
-                    />
-                  </Paper>
-                ))}
+                  ))}
+                </Paper>
 
                 {/* Social links */}
                 <Box
@@ -354,10 +291,7 @@ const Contact = () => {
                       md: 4,
                     },
                     display: 'flex',
-                    justifyContent: {
-                      xs: 'center',
-                      md: 'flex-start',
-                    },
+                    justifyContent: 'flex-start',
                     gap: 1.5,
                   }}
                 >
@@ -397,17 +331,13 @@ const Contact = () => {
                 </Box>
               </Box>
             </motion.div>
-          </Grid>
+          </Box>
 
           {/* Contact form */}
-          <Grid
-            item
-            xs={12}
-            md={7}
-            lg={7}
+          <Box
             sx={{
-              display: 'flex',
-              justifyContent: 'center',
+              minWidth: 0,
+              order: { xs: 1, md: 2 },
             }}
           >
             <motion.div
@@ -422,126 +352,130 @@ const Contact = () => {
                 elevation={0}
                 sx={{
                   width: '100%',
-                  maxWidth: {
-                    xs: 560,
-                    md: 620,
-                    lg: 650,
-                  },
+                  maxWidth: { xs: 560, md: 'none' },
                   mx: 'auto',
                   p: {
                     xs: 2,
                     sm: 3,
-                    md: 4,
+                    md: 3.5,
                   },
                   border: '1px solid',
                   borderColor: 'divider',
-                  borderRadius: 3,
+                  borderRadius: 2.5,
                   backgroundColor: 'background.paper',
                   boxSizing: 'border-box',
+                  boxShadow: '0 18px 50px rgba(0,0,0,0.12)',
                 }}
               >
-                <Typography
-                  variant="h5"
+                <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, mb: { xs: 2.5, sm: 3.5 } }}>
+                  <Box sx={{ width: 40, height: 40, flex: '0 0 40px', display: 'grid', placeItems: 'center', borderRadius: 1.5, color: 'primary.main', backgroundColor: 'rgba(100,255,218,0.1)' }}>
+                    <Email fontSize="small" />
+                  </Box>
+                  <Box>
+                    <Typography sx={{ mb: 0.35, color: 'primary.main', fontSize: 9, fontWeight: 800, letterSpacing: '0.14em' }}>
+                      SEND A NOTE
+                    </Typography>
+                    <Typography variant="h5" sx={{ fontSize: { xs: '1.2rem', sm: '1.4rem' }, fontWeight: 700, lineHeight: 1.3 }}>
+                      Tell me about your project
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{ mt: 0.65, fontSize: 11, lineHeight: 1.65 }}>
+                      A few details are enough to get the conversation started.
+                    </Typography>
+                  </Box>
+                </Box>
+
+                <Box
                   sx={{
-                    mb: {
-                      xs: 2.5,
-                      sm: 3,
-                    },
-                    fontSize: {
-                      xs: '1.35rem',
-                      sm: '1.5rem',
-                    },
-                    fontWeight: 600,
+                    display: 'grid',
+                    gridTemplateColumns: { xs: 'minmax(0, 1fr)', sm: 'repeat(2, minmax(0, 1fr))' },
+                    gap: { xs: 1.5, sm: 1.75 },
+                    width: '100%',
                   }}
                 >
-                  Send a Message
-                </Typography>
+                  <TextField
+                    fullWidth
+                    label="Name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    variant="outlined"
+                    autoComplete="name"
+                    sx={fieldSx}
+                  />
 
-                <Grid container spacing={{ xs: 2, sm: 2.5, md: 3 }}>
-                  <Grid item xs={12} sm={6}>
-                    <TextField
-                      fullWidth
-                      label="Name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      variant="outlined"
-                    />
-                  </Grid>
+                  <TextField
+                    fullWidth
+                    label="Email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    variant="outlined"
+                    autoComplete="email"
+                    sx={fieldSx}
+                  />
 
-                  <Grid item xs={12} sm={6}>
-                    <TextField
-                      fullWidth
-                      label="Email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      variant="outlined"
-                    />
-                  </Grid>
+                  <TextField
+                    fullWidth
+                    label="Subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    variant="outlined"
+                    sx={{ ...fieldSx, gridColumn: '1 / -1' }}
+                  />
 
-                  <Grid item xs={12}>
-                    <TextField
-                      fullWidth
-                      label="Subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      variant="outlined"
-                    />
-                  </Grid>
-
-                  <Grid item xs={12}>
                   <TextField
                     fullWidth
                     label="Message"
                     name="message"
                     multiline
-                    rows={5}
+                    minRows={3}
+                    maxRows={7}
                     value={formData.message}
                     onChange={handleChange}
                     required
                     variant="outlined"
                     sx={{
-                      '& .MuiInputBase-root': {
+                      ...fieldSx,
+                      gridColumn: '1 / -1',
+                      '& .MuiOutlinedInput-root': {
+                        ...fieldSx['& .MuiOutlinedInput-root'],
                         alignItems: 'flex-start',
+                        py: 1.25,
                       },
                     }}
                   />
-                  </Grid>
 
-                  <Grid item xs={12}>
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      size="large"
-                      fullWidth
-                      sx={{
-                        py: {
-                          xs: 1.35,
-                          sm: 1.5,
-                        },
-                        borderRadius: 2,
-                        fontWeight: 600,
-                        textTransform: 'none',
-                        fontSize: {
-                          xs: '0.95rem',
-                          sm: '1rem',
-                        },
-                      }}
-                    >
-                      Send Message
-                    </Button>
-                  </Grid>
-                </Grid>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    size="large"
+                    fullWidth
+                    endIcon={<ArrowOutward />}
+                    sx={{
+                      gridColumn: '1 / -1',
+                      minHeight: 50,
+                      py: 1.1,
+                      borderRadius: 1.5,
+                      fontWeight: 700,
+                      textTransform: 'none',
+                      fontSize: { xs: '0.9rem', sm: '0.95rem' },
+                    }}
+                  >
+                    Open email draft
+                  </Button>
+                  <Typography sx={{ gridColumn: '1 / -1', mt: -0.75, color: 'text.secondary', fontSize: 10, textAlign: 'center' }}>
+                    Your default email app will open with your message ready to send.
+                  </Typography>
+                </Box>
               </Paper>
             </motion.div>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

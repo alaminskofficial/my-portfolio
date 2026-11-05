@@ -30,10 +30,10 @@ const Navbar = () => {
   const drawer = (
     <List sx={{ backgroundColor: theme.palette.background.default, height: '100%', px: 1.5, py: 2 }}>
       {menuItems.map((item) => (
-        <ListItem 
-          button 
-          key={item.text} 
-          component={Link} 
+        <ListItem
+          button
+          key={item.text}
+          component={Link}
           to={item.path}
           onClick={handleDrawerToggle}
           aria-current={isActive(item.path) ? 'page' : undefined}
@@ -43,14 +43,14 @@ const Navbar = () => {
             color: isActive(item.path) ? theme.palette.primary.main : theme.palette.text.primary,
           }}
         >
-          <ListItemText 
-            primary={item.text} 
-            sx={{ 
-              '& .MuiTypography-root': { 
+          <ListItemText
+            primary={item.text}
+            sx={{
+              '& .MuiTypography-root': {
                 fontFamily: theme.typography.fontFamily,
                 letterSpacing: '0.05em',
-              } 
-            }} 
+              }
+            }}
           />
         </ListItem>
       ))}

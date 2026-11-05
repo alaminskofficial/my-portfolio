@@ -25,6 +25,7 @@ img {
 }
 
 @media (max-width: 600px) {
+
   html,
   body,
   #root {
@@ -52,7 +53,7 @@ img {
     scrollbar-width: thin;
   }
 
-  .resume-tabs-list > .MuiButton-root {
+  .resume-tabs-list>.MuiButton-root {
     width: auto;
     min-width: max-content;
     flex: 0 0 auto;
@@ -62,7 +63,7 @@ img {
 }
 
 @media (min-width: 601px) {
-  .resume-tabs-list > .MuiButton-root {
+  .resume-tabs-list>.MuiButton-root {
     width: 100%;
   }
 }

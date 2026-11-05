@@ -89,7 +89,10 @@ const Home = () => {
             item
             xs={12}
             md={7}
-            sx={{ textAlign: { xs: "center", md: "left" } }}
+            sx={{
+              order: { xs: 2, md: 1 },
+              textAlign: { xs: "center", md: "left" },
+            }}
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -108,7 +111,7 @@ const Home = () => {
                   },
                 }}
               >
-                Software Engineer · Full-stack Product Builder
+                Software Engineer · Full-stack · AI/ML & Gen AI
               </Typography>
 
               <Typography
@@ -158,7 +161,7 @@ const Home = () => {
                   },
                 }}
               >
-                I turn complex requirements into clear, dependable software. I work across web, backend, and mobile, bringing product thinking and careful engineering to every stage from first idea to release.
+                I build dependable web and mobile products from idea to release. Alongside full-stack engineering, I explore practical AI/ML and Generative AI to create more useful, thoughtful product experiences.
               </Typography>
 
               {/* =========================
@@ -198,7 +201,7 @@ const Home = () => {
                     textTransform: "none",
                   }}
                 >
-                  Explore my experience
+                  My Experience
                 </Button>
 
                 {socialLinks.map((link, index) => (
@@ -308,7 +311,7 @@ const Home = () => {
               Desktop -> Right side
               Mobile -> Responsive center
           ========================== */}
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={5} sx={{ order: { xs: 1, md: 2 } }}>
             <Box
               sx={{
                 position: "relative",
