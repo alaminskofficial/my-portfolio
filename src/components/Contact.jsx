@@ -162,7 +162,7 @@ const Contact = () => {
               lineHeight: 1.7,
             }}
           >
-            Let's discuss your project and bring your ideas to life
+            Have a product or engineering challenge in mind? Share a little context and let’s start a conversation.
           </Typography>
         </motion.div>
 

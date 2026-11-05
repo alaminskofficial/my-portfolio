@@ -30,7 +30,7 @@ const Services = () => {
       icon: <Code />,
       title: 'Software Development',
       description:
-        'Creating responsive and dynamic web applications using modern frameworks and best practices.',
+        'Build fast, accessible web products with clear user journeys, maintainable components, and APIs designed around real workflows.',
       details: [
         'Website Development',
         'Responsive Design',
@@ -43,7 +43,7 @@ const Services = () => {
       icon: <Laptop />,
       title: 'AI & Machine Learning',
       description:
-        'Implementing AI and ML solutions to enhance user experiences and automate processes.',
+        'Explore practical AI features that help people find information, reduce repetitive work, and make better use of product data.',
       details: [
         'Generative AI Models',
         'Natural Language Processing',
@@ -56,21 +56,21 @@ const Services = () => {
       icon: <DesignServices />,
       title: 'System Design',
       description:
-        'Designing scalable and efficient system architectures for complex applications.',
+        'Shape reliable application foundations with thoughtful service boundaries, data models, and infrastructure choices.',
       details: ['Microservices', 'Cloud Architecture', 'Database Design'],
     },
     {
       icon: <PhoneIphone />,
       title: 'Mobile Development',
       description:
-        'Building cross-platform mobile applications that deliver seamless user experiences.',
+        'Create cross-platform mobile experiences that feel natural to use, connect cleanly to backend services, and hold up in everyday use.',
       details: ['iOS & Android', 'React Native', 'Responsive UI/UX'],
     },
     {
       icon: <Speed />,
       title: 'Performance Optimization',
       description:
-        'Optimizing applications for maximum speed, efficiency, and scalability.',
+        'Find bottlenecks, improve loading and response times, and make application behavior more predictable as usage grows.',
       details: ['Code Review', 'Load Testing', 'Caching Strategies'],
     },
   ];
@@ -220,6 +220,14 @@ const Services = () => {
                 <Paper
                   elevation={0}
                   onClick={() => handleOpenDialog(service)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      handleOpenDialog(service);
+                    }
+                  }}
                   sx={{
                     position: 'relative',
                     height: '100%',
@@ -238,6 +246,10 @@ const Services = () => {
                       md: 4,
                     },
                     cursor: 'pointer',
+                    '&:focus-visible': {
+                      outline: '3px solid #64ffda',
+                      outlineOffset: 3,
+                    },
                     overflow: 'hidden',
 
                     background:

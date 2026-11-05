@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button, Chip, IconButton } from '@mui/material';
 import { GitHub, Launch } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
+import workingPhoto from '../assets/mypicture.jpg';
 
 const Work = () => {
   const [filter, setFilter] = useState('all');
@@ -10,29 +11,37 @@ const Work = () => {
 
   const projects = [
     {
-      title:'minuteServ',
-      category: 'web',
-      image: 'https://picsum.photos/800/600?random=6',
-      description: 'A service marketplace platform connecting users with local service providers for various tasks and services.',
-      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay'],
-      github:'https://github.com/alaminskofficial',
-      live:'https://minuteserv.com',
+      title: 'Minuteserv User App',
+      category: 'mobile',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85',
+      description: 'The customer-facing Minuteserv app makes it easy to browse local services, book a visit, pay securely, and follow booking progress from one place.',
+      technologies: ['React Native', 'Expo', 'Node.js', 'Socket.IO', 'Razorpay'],
+      github: 'https://github.com/alaminskofficial',
+      live: 'https://play.google.com/store/apps/details?id=com.minuteserv',
     },
     {
-      title: 'minuteServ android app',
+      title: 'Minuteserv Partner App',
       category: 'mobile',
-      image: 'https://picsum.photos/800/600?random=8',
-      description: 'A mobile application for the minuteServ service marketplace, allowing users to book services and manage their accounts on the go.',
-      technologies: ['React Native', 'Node.js', 'Express', 'MongoDB', 'Razorpay'],
-      github:'https://github.com/alaminskofficial',
-      live:'https://play.google.com/store/apps/details?id=com.minuteserv',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=85',
+      description: 'A partner-focused Android app for receiving service jobs, managing bookings, communicating with customers, and keeping work moving while on the go.',
+      technologies: ['React Native', 'Expo', 'Node.js', 'Socket.IO', 'Maps'],
+      github: 'https://github.com/alaminskofficial',
+      live: 'https://play.google.com/store/apps/details?id=com.minuteserv.partner',
+    },
+    {
+      title: 'Minuteserv Website',
+      category: 'web',
+      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1200&q=85',
+      description: 'The web marketplace helps customers explore available services, compare options, schedule a visit, and complete a booking through a clear desktop and mobile experience.',
+      technologies: ['React', 'Vite', 'Tailwind CSS', 'REST APIs', 'Razorpay'],
+      github: 'https://github.com/alaminskofficial',
+      live: 'https://minuteserv.com',
     },
     {
       title: 'skMovies',
       category: 'web',
-      image:'https://fullstack-lld-git-main-alaminskofficials-projects.vercel.app/static/media/footer-bg.67e95f05e76a8cebf7e2.jpg',
-      backupImage: 'https://picsum.photos/800/600?random=1',
-      description: 'A full-stack movie database application with personalized recommendations and advanced search features. ',
+      image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=85',
+      description: 'A full-stack movie discovery experience for exploring titles, searching a growing catalog, and finding what to watch next.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Redis', 'TensorFlow'],
       github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/sk-movies',
       live: 'https://skmovies.vercel.app',
@@ -40,8 +49,8 @@ const Work = () => {
     {
       title: 'Portfolio Website',
       category: 'design',
-      image: 'https://picsum.photos/800/600?random=3',
-      description: 'Modern portfolio website with dark theme, smooth animations, and responsive design.',
+      image: workingPhoto,
+      description: 'A personal portfolio shaped around clear storytelling, responsive layouts, and a direct path from selected work to contact.',
       technologies: ['React', 'Material-UI', 'Framer Motion', 'Three.js'],
       github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react',
       live: 'https://alaminskofficial.vercel.app',
@@ -49,8 +58,8 @@ const Work = () => {
     {
       title : "Weather Application",
       category: 'web',
-      image : 'https://picsum.photos/800/600?random=7',
-      description : "Weather application to fetch the weather data in current location and search based city ",
+      image : 'https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=1200&q=85',
+      description : "A weather dashboard that brings current local conditions together with city search in a simple, glanceable view.",
       technologies: ['React.js', 'Express', 'Socket.io', 'PostgreSQL'],
       github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/weatherapp',
       live: 'https://sk-weather.vercel.app/',
@@ -59,8 +68,8 @@ const Work = () => {
     {
       title: 'AI Code Review Platform',
       category: 'web',
-      image: 'https://picsum.photos/800/600?random=5',
-      description: 'Web platform that uses AI to analyze and provide feedback on code quality, style, and potential bugs.',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85',
+      description: 'An AI-assisted code review concept focused on turning source changes into practical feedback about quality, consistency, and possible issues.',
       technologies: ['AI', 'Next.js', 'Python', 'PyTorch', 'AWS'],
       github: 'https://github.com/alaminskofficial/',
       live: 'https://example.com',
@@ -68,8 +77,8 @@ const Work = () => {
     {
       title: 'AI Image Generator',
       category: 'web',
-      image: 'https://picsum.photos/800/600?random=5',
-      description: 'Web application that generates unique artwork using state-of-the-art AI models.',
+      image: 'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1200&q=85',
+      description: 'An image-generation exploration for making prompt-led creative tools approachable through a focused web interface.',
       technologies: ['Next.js', 'Python', 'PyTorch', 'AWS'],
       github: 'https://github.com',
       live: 'https://example.com',
@@ -77,8 +86,8 @@ const Work = () => {
     {
       title: 'Fitness Tracking App',
       category: 'mobile',
-      image: 'https://picsum.photos/800/600?random=2',
-      description: 'Mobile app for tracking workouts and nutrition with personalized AI coaching and social features.',
+      image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=85',
+      description: 'A mobile product concept for bringing workout and nutrition tracking into one clear daily routine.',
       technologies: ['React Native', 'Firebase', 'TensorFlow Lite', 'GraphQL'],
       github: 'https://github.com',
       live: 'https://example.com',
@@ -86,8 +95,8 @@ const Work = () => {
     {
       title: 'Task Management System',
       category: 'web',
-      image: 'https://picsum.photos/800/600?random=4',
-      description: 'Project management tool with real-time updates, Kanban boards, and team collaboration features.',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85',
+      description: 'A collaborative task-management concept organized around visual workflow, shared progress, and timely updates.',
       technologies: ['React.js', 'Express', 'Socket.io', 'PostgreSQL'],
       github: 'https://github.com/alaminskofficial/fullstackLLD/tree/main/react/todo-app',
       live: 'https://example.com',
@@ -138,7 +147,7 @@ const Work = () => {
               mx: 'auto',
             }}
           >
-            Explore my latest projects and creative works
+            A selection of full-stack builds, product ideas, and interface work. Each project starts with a real user need and a clear path through it.
           </Typography>
 
           <Box
@@ -204,16 +213,20 @@ const Work = () => {
                       whileHover={{ scale: 1.1 }}
                       transition={{ type: 'tween', duration: 0.5 }}
                     >
-                      <CardMedia
+                        <CardMedia
                         component="img"
-                        height="200"
+                          height="220"
                         image={project.image}
                         alt={project.title}
                         onError={(e) => {
-                          e.target.src = project.backupImage || 'https://picsum.photos/800/600?random=1';
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = workingPhoto;
                         }}
                         sx={{
+                          display: 'block',
                           objectFit: 'cover',
+                          width: '100%',
+                            aspectRatio: '16 / 9',
                         }}
                       />
                     </motion.div>

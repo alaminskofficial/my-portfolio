@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   const drawer = (
-    <List sx={{ backgroundColor: theme.palette.background.default, height: '100%' }}>
+    <List sx={{ backgroundColor: theme.palette.background.default, height: '100%', px: 1.5, py: 2 }}>
       {menuItems.map((item) => (
         <ListItem 
           button 
@@ -36,7 +36,10 @@ const Navbar = () => {
           component={Link} 
           to={item.path}
           onClick={handleDrawerToggle}
+          aria-current={isActive(item.path) ? 'page' : undefined}
           sx={{
+            minHeight: 48,
+            borderRadius: 2,
             color: isActive(item.path) ? theme.palette.primary.main : theme.palette.text.primary,
           }}
         >
@@ -56,7 +59,7 @@ const Navbar = () => {
 
   return (
     <AppBar position="fixed">
-      <Toolbar sx={{ justifyContent: 'space-between' }}>
+      <Toolbar sx={{ justifyContent: 'space-between', minHeight: { xs: 60, sm: 68 }, px: { xs: 2, sm: 3 } }}>
         <Typography
           variant="h6"
           component={Link}
@@ -127,8 +130,9 @@ const Navbar = () => {
           }}
           sx={{
             '& .MuiDrawer-paper': {
-              width: 240,
+              width: 'min(280px, 86vw)',
               backgroundColor: theme.palette.background.default,
+              borderLeft: '1px solid rgba(204, 214, 246, 0.1)',
             },
           }}
         >

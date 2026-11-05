@@ -47,7 +47,7 @@ import {
                 mb: 3,
               }}
             >
-              Full Stack Developer | AI-ML | SpringBoot | React | Next | Express | Java | JavaScript | Python
+              Software engineer building web, mobile, and full-stack products with React, Node.js, Java, and Python.
             </Typography>
   
             <Stack

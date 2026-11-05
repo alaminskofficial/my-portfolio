@@ -108,7 +108,7 @@ const Home = () => {
                   },
                 }}
               >
-                Software Engineer
+                Software Engineer · Full-stack Product Builder
               </Typography>
 
               <Typography
@@ -130,7 +130,7 @@ const Home = () => {
                   },
                 }}
               >
-                Hello I'm
+                I’m
                 <br />
                 <span>Sk Alamin</span>
               </Typography>
@@ -158,9 +158,7 @@ const Home = () => {
                   },
                 }}
               >
-                I am passionate about transforming ideas into reality through
-                code, leveraging cutting-edge technologies to build innovative
-                solutions that enhance user experiences.
+                I turn complex requirements into clear, dependable software. I work across web, backend, and mobile, bringing product thinking and careful engineering to every stage from first idea to release.
               </Typography>
 
               {/* =========================
@@ -200,7 +198,7 @@ const Home = () => {
                     textTransform: "none",
                   }}
                 >
-                  Download CV
+                  Explore my experience
                 </Button>
 
                 {socialLinks.map((link, index) => (
@@ -428,7 +426,7 @@ const Home = () => {
                 <Box
                   component="img"
                   src={passportImage}
-                  alt="Profile"
+                  alt="Sk Alamin, software engineer"
                   sx={{
                     width: {
                       xs: "min(50vw, 190px)",

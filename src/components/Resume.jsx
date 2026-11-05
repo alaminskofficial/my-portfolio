@@ -11,45 +11,43 @@ const Resume = () => {
       period: "2025 - Present",
       role: "Specialist Software Engineer",
       company: "Societe Generale Global Solution Centre",
-      description: "Developing and maintaining enterprise-level applications for financial services, focusing on performance optimization and scalability.",
+      description: "Build and maintain enterprise financial-services applications, with day-to-day work spanning product changes, production quality, performance, and scalable engineering practices.",
     },
     {
       period: "2023 - 2025",
       role: "Software Development Engineer",
       company: "Novopay Solutions pvt ltd.",
-      description: "Worked on developing and maintaining web applications, implementing new features, and optimizing existing code for better performance.",
+      description: "Delivered web application features and ongoing improvements, balancing new product needs with code quality, performance, and maintainability.",
     },
     {
       period: "2021 - 2023",
       role: "Software Engineer",
       company: "TrisysIt Services pvt ltd.",
-      description: "Contributed to the development of web applications, collaborated with cross-functional teams, and participated in code reviews to ensure high-quality software delivery.",
+      description: "Contributed to web application delivery with cross-functional teammates, taking part in implementation, code review, and iterative releases.",
     },
   ];
 
-  const skills = [
-    { name: "AI-ML", category: "Machine Learning" },
-    { name:"Gen AI", category:"Artificial Intelligence"},
-    { name: "Python", category: "Backend" },
-    { name: "Java", category: "Backend" },
-    { name: "JavaScript", category: "Frontend" },
-    { name: "TypeScript", category: "Frontend" },
-    { name: "SpringBoot", category: "Backend" },
-    { name: "React.js", category: "Frontend" },
-    { name: "Node.js", category: "Backend" },
-    { name: "Next.js", category: "Full Stack" },
-    { name: "MERN" ,category :"Full Stack"},
-    { name: "HTML/CSS", category: "Frontend" },
-    { name: "SQL/NoSQL", category: "Database" },
-    { name: "Redis", category: "Cache" },
-    { name: "Kafka/RabbitMQ", category: "Messaging Queue" },
-    { name: "AWS", category: "Cloud" },
-    { name: "Docker", category: "Containerization" },
-    { name: "Git", category: "Version Control" },
-    { name: "Agile/Scrum", category: "Methodology" },
-    { name: "CI/CD", category: "DevOps" },
-    { name: "RESTful APIs", category: "API" },
-    {name :"Microservice", category:"Architecture"}
+  const skillGroups = [
+    {
+      name: "Frontend",
+      description: "Interfaces and client-side applications",
+      skills: ["JavaScript", "TypeScript", "React.js", "Next.js", "HTML/CSS"],
+    },
+    {
+      name: "Backend & APIs",
+      description: "Services, integrations, and application logic",
+      skills: ["Node.js", "Java", "SpringBoot", "Python", "RESTful APIs", "MERN"],
+    },
+    {
+      name: "Data & Infrastructure",
+      description: "Storage, messaging, and delivery foundations",
+      skills: ["SQL/NoSQL", "Redis", "Kafka/RabbitMQ", "AWS", "Docker", "CI/CD", "Git"],
+    },
+    {
+      name: "AI & Engineering",
+      description: "Applied intelligence and dependable delivery",
+      skills: ["AI-ML", "Gen AI", "Microservice", "Agile/Scrum" , " Software Design"],
+    },
   ];
 
   return (
@@ -83,7 +81,7 @@ const Resume = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Why hire me?
+                      My background
             </motion.span>
             <motion.span
               initial={{ opacity: 0, x: 20 }}
@@ -103,8 +101,9 @@ const Resume = () => {
             flexDirection: { xs: "column", md: "row" },
           }}
         >
-          <Box sx={{ flex: "0 0 200px" }}>
+          <Box sx={{ flex: { xs: "0 0 auto", md: "0 0 200px" }, width: { xs: "100%", md: "auto" }, minWidth: 0 }}>
             <motion.div
+              className="resume-tabs-list"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
@@ -230,44 +229,72 @@ const Resume = () => {
             )}
 
             {activeTab === "skills" && (
-              <Box>
+              <Box className="skills-view">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Grid container spacing={2}>
-                    {skills.map((skill, index) => (
-                      <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Box sx={{ mb: 3 }}>
+                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 0.75 }}>
+                      Tools I work with
+                    </Typography>
+                    <Typography color="text.secondary" variant="body2">
+                      A practical mix across product development, platform engineering, and applied AI.
+                    </Typography>
+                  </Box>
+                  <Grid container spacing={{ xs: 1.5, sm: 2 }}>
+                    {skillGroups.map((group, index) => (
+                      <Grid item xs={12} sm={6} key={group.name}>
                         <motion.div
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          initial={{ opacity: 0, y: 12 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.35, delay: index * 0.06 }}
+                          style={{ height: "100%" }}
                         >
                           <Paper
                             elevation={0}
                             sx={{
-                              p: 3,
-                              bgcolor: "rgba(255, 255, 255, 0.05)",
+                              height: "100%",
+                              p: { xs: 2, sm: 2.5 },
+                              bgcolor: "rgba(255, 255, 255, 0.045)",
+                              border: "1px solid rgba(204, 214, 246, 0.1)",
                               borderRadius: 2,
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "center",
-                              gap: 2,
                             }}
                           >
-                            <Box
-                              sx={{
-                                color: "#00ff9d",
-                                transform: "scale(1.5)",
-                              }}
-                            >
-                              {skill.icon}
+                            <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 1, mb: 0.5 }}>
+                              <Typography variant="h6" sx={{ color: "text.primary", fontSize: { xs: "0.95rem", sm: "1rem" }, fontWeight: 700 }}>
+                                {group.name}
+                              </Typography>
+                              <Typography variant="caption" sx={{ color: "#64ffda", fontWeight: 700 }}>
+                                {String(group.skills.length).padStart(2, "0")}
+                              </Typography>
                             </Box>
-                            <Typography variant="h6">{skill.name}</Typography>
-                            <Typography color="text.secondary" variant="body2">
-                              {skill.category}
+                            <Typography color="text.secondary" variant="caption" sx={{ display: "block", mb: 1.75, lineHeight: 1.5 }}>
+                              {group.description}
                             </Typography>
+                            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.75 }}>
+                              {group.skills.map((skill) => (
+                                <Box
+                                  component="span"
+                                  key={skill}
+                                  sx={{
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    minHeight: 30,
+                                    px: 1,
+                                    border: "1px solid rgba(204, 214, 246, 0.14)",
+                                    borderRadius: 1,
+                                    color: "#ccd6f6",
+                                    fontSize: { xs: "0.65rem", sm: "0.7rem" },
+                                    lineHeight: 1.3,
+                                    overflowWrap: "anywhere",
+                                  }}
+                                >
+                                  {skill}
+                                </Box>
+                              ))}
+                            </Box>
                           </Paper>
                         </motion.div>
                       </Grid>
@@ -343,19 +370,19 @@ const Resume = () => {
                     }}
                   >
                      <Typography variant="body1" paragraph>
-                      As a dedicated software Engineer, I thrive on transforming complex problems into elegant solutions. My expertise spans across various technologies, allowing me to craft seamless and intuitive user experiences.
+                      I’m a software engineer who enjoys making complex product requirements understandable and useful. I work across interfaces, services, and data to deliver complete experiences rather than isolated features.
                     </Typography>
                     <Typography variant="body1" paragraph>
-                      I am also deeply passionate about the field of Artificial Intelligence and Machine Learning. I have been actively exploring AI technologies, including <b>Generative AI</b>, and have implemented several projects that leverage these cutting-edge tools to solve real-world problems.
+                      I’m especially interested in applied AI and machine learning: using them where they make a product more helpful, while keeping the underlying experience clear and dependable.
                     </Typography>
                     <Typography variant="body1" paragraph>
-                      I am committed to writing clean, efficient code and continuously improving my skills. Outside of work, I am passionate about exploring new technologies and contributing to open-source projects, which keeps me at the forefront of industry trends.
+                      I value readable code, useful collaboration, and thoughtful trade-offs. I keep learning through hands-on projects and by exploring tools that can make software better for the people who use it.
                     </Typography>
                     <Typography variant="body1">
-                      My journey in software development is driven by a love for learning and a desire to make a meaningful impact through technology.
+                      My approach is practical: understand the problem, choose a clear solution, and keep improving it through feedback.
                     </Typography>
                     <Typography variant="body1" paragraph>
-                      I am always open to new opportunities and collaborations that challenge me to grow and innovate. Let's connect and create something amazing together!
+                      I’m open to thoughtful opportunities and collaborations where I can contribute, keep growing, and help a team ship useful software.
                     </Typography>
                   </Paper>
                 </motion.div>
